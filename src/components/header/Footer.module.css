@@ -1,0 +1,18 @@
+.footerContainer {
+  padding-top: 1rem;
+  height: 15rem;
+  background-color: rgb(135, 160, 200);
+  text-align: center;
+}
+.name {
+  transition: color 0.3s ease;
+  font-size: 3rem;
+}
+.footerContainer:hover .name {
+  color: rgb(50, 3, 138);
+}
+
+.mediaLinks svg {
+  cursor: pointer;
+  margin: 1rem;
+}

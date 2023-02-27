@@ -1,0 +1,35 @@
+.container {
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container div {
+  margin-left: 10rem;
+  margin-right: 10rem;
+}
+
+.container img {
+  height: 80%;
+  width: 20rem;
+}
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form button {
+  height: 4rem;
+  width: 4rem;
+}
+
+.form input {
+  height: 4rem;
+}
+
+.svgs svg {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}

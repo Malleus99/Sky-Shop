@@ -1,0 +1,17 @@
+.container {
+  padding: 1rem 1px 1rem 0.5rem;
+  text-align: right;
+  height: fit-content;
+}
+
+.newprice {
+  color: rgb(70, 145, 246);
+}
+
+.oldprice {
+  margin-top: 0.4rem;
+  text-decoration: line-through;
+  color: gray;
+  font-size: 1.3rem;
+  opacity: 0.8;
+}

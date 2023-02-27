@@ -1,0 +1,23 @@
+.container {
+  border-bottom: solid 1px;
+  border-color: var(--color-border--1);
+}
+
+.name {
+  width: 100%;
+}
+
+.filterName {
+  display: flex;
+  align-items: center;
+  padding: 1rem 0;
+  cursor: pointer;
+}
+
+.symbol {
+  color: rgb(172, 169, 169);
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}

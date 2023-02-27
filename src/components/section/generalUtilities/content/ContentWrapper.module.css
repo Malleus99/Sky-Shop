@@ -1,0 +1,32 @@
+.wrapper {
+  width: 80%;
+}
+
+.title {
+  margin-bottom: 1.5rem;
+  border-bottom: solid 1px var(--color-border--1);
+}
+
+.titlespace {
+  display: flex;
+}
+
+.name {
+  margin-right: 1rem;
+}
+.line {
+  width: 100%;
+  border-top: solid 1px var(--color-border--1);
+}
+
+.flexbox {
+  display: flex;
+  flex-wrap: wrap;
+  height: 44rem;
+}
+
+.flexbox > div {
+  flex: 20%;
+  max-width: 20%;
+  height: 100%;
+}
