@@ -1,37 +1,23 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchItems } from '../../../store/items-actions';
 
 import ContentWrapper from '../generalUtilities/content/ContentWrapper';
 import FilterLayout from '../generalUtilities/filter/FilterLayout';
 import FilterName from '../generalUtilities/filter/FilterName';
 import Section from '../Section';
 import ProductsMap from '../../main-page/ProductsMap';
-import database_URL from '../../../Helpers/databaseURL';
 
 const KidsPageAssembler = () => {
-  const [products, setProducts] = useState([]);
-
-  const fetchItemsHandler = useCallback(async () => {
-    try {
-      const response = await fetch(database_URL);
-      if (!response.ok) {
-        throw new Error('Something went wrong!');
-      }
-      const data = await response.json();
-      const loadedItems = Object.entries(data).reduce((acc, [id, item]) => {
-        if (item.sexOrGroup === 'kids') {
-          acc.push({ id, ...item });
-        }
-        return acc;
-      }, []);
-      setProducts(loadedItems);
-    } catch (error) {
-      console.error(error);
-    }
-  }, []);
-
+  const dispatch = useDispatch();
+  const products = useSelector((state) => state.items).filter(
+    (product) => product.sexOrGroup === 'kids'
+  );
+  
   useEffect(() => {
-    fetchItemsHandler();
-  }, [fetchItemsHandler]);
+    dispatch(fetchItems());
+  }, [dispatch]);
+
   return (
     <Section>
       <FilterLayout>
