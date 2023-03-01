@@ -1,7 +1,7 @@
 import ProductBox from './productBox/ProductBox';
 
-const ProductsMap = (props) => {
-  const products = props.data.map((product) => {
+const ProductsMap = ({ data }) => {
+  const products = data.map((product) => {
     return (
       <ProductBox
         key={product.id}
@@ -14,6 +14,8 @@ const ProductsMap = (props) => {
         sizes={product.sizes}
         price={product.price}
         discount={product.discount}
+        productTag={product.productTag}
+        tags={product.tags}
       />
     );
   });

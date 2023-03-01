@@ -1,9 +1,9 @@
 import classes from './FilterLayout.module.css';
-const FilterLayout = (props) => {
+const FilterLayout = ({ children }) => {
   return (
     <div className={classes.container}>
       <h3 className={classes.filterpara}>Filter by</h3>
-      {props.children}
+      {children}
     </div>
   );
 };

@@ -4,6 +4,7 @@ import LogoMain from '../../../supplementary/Logo-main.png';
 import ProfileSvg from '../../../supplementary/Svg/ProfileSvg';
 import FavoriteSvg from '../../../supplementary/Svg/FavoriteSvg';
 import ShoppingCartSvg from '../../../supplementary/Svg/ShoppingCartSvg';
+import SearchForm from './SearchForm';
 import classes from './TopHeader.module.css';
 
 const TopHeader = () => {
@@ -18,10 +19,7 @@ const TopHeader = () => {
       <div onClick={NavigateToMainPageHandler}>
         <img src={LogoMain} alt='logo' />
       </div>
-      <form className={classes.form}>
-        <input type='search' placeholder='Search Shop' />
-        <button type='button' />
-      </form>
+      <SearchForm />
       <div className={classes.svgs}>
         <ProfileSvg />
         <FavoriteSvg />

@@ -2,7 +2,8 @@
 
 :root {
   --color-border--1: #bfbfbf;
-
+  --color-blue--1: rgb(70, 145, 246);
+  --color-black-1: rgba(19, 18, 18, 0.87);
   font-family: Roboto, Arial, sans-serif;
 
   color: rgba(19, 18, 18, 0.87);

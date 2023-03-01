@@ -1,7 +1,7 @@
-import { getItems } from './items-slice';
+import { fetchItems } from './items-slice';
 import database_URL from '../Helpers/databaseURL';
 
-export const fetchItems = () => async (dispatch) => {
+export const fetchItemsFromDatabase = () => async (dispatch) => {
   try {
     const response = await fetch(database_URL);
     if (!response.ok) {
@@ -13,7 +13,7 @@ export const fetchItems = () => async (dispatch) => {
       return acc;
     }, []);
 
-    dispatch(getItems(loadedItems));
+    dispatch(fetchItems(loadedItems));
   } catch (error) {
     console.error(error);
   }

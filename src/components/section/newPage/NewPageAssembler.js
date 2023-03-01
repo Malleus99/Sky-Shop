@@ -1,29 +1,30 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchItems } from '../../../store/items-actions';
+import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 import ProductsMap from '../../main-page/ProductsMap';
 import Section from '../Section';
 import ContentWrapper from '../generalUtilities/content/ContentWrapper';
-import FilterLayout from '../generalUtilities/filter/FilterLayout';
-import FilterName from '../generalUtilities/filter/FilterName';
+import NewPageFilter from './NewPageFilters';
 
 const NewPageAssembler = () => {
-  const dispatch = useDispatch();
-  const products = useSelector((state) => state.items);
+  const products = useSelector((state) => state.items.data);
+  const [initState, SetInitData] = useState([]);
+  const [visibleData, setVisibleData] = useState([]);
 
   useEffect(() => {
-    dispatch(fetchItems());
-  }, [dispatch]);
+    setVisibleData(products);
+    SetInitData(products);
+  }, [products]);
+
+  const updateState = (data) => {
+    setVisibleData(data);
+  };
 
   return (
     <Section>
-      <FilterLayout>
-        <FilterName title='categories' isOpen={true}></FilterName>
-        <FilterName title='sub-category' isOpen={false}></FilterName>
-      </FilterLayout>
+      <NewPageFilter data={initState} updateState={updateState} />
       <ContentWrapper title='New'>
-        <ProductsMap data={products} />
+        <ProductsMap data={visibleData} />
       </ContentWrapper>
     </Section>
   );

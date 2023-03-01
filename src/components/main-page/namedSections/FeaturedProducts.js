@@ -1,24 +1,18 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchItems } from '../../../store/items-actions';
+import { useSelector } from 'react-redux';
 
-import ProductsMap from '../ProductsMap';
 import SectionsLayout from './SectionsLayout';
 
 const FeaturedProducts = () => {
-  const dispatch = useDispatch();
-  const products = useSelector((state) => state.items).filter(
+  const products = useSelector((state) => state.items.data).filter(
     (product) => product.productTag === 'featured'
   );
 
-  useEffect(() => {
-    dispatch(fetchItems());
-  }, [dispatch]);
-
   return (
-    <SectionsLayout name='featured products'>
-      <ProductsMap data={products} />
-    </SectionsLayout>
+    <SectionsLayout
+      name='featured products'
+      items={products}
+      visibleItemsCount={6}
+    />
   );
 };
 export default FeaturedProducts;

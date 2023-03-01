@@ -1,7 +1,8 @@
 import WomenPageAssembler from '../components/section/womenPage/WomenPageAssembler';
 
 const WomenPage = () => {
-  return <WomenPageAssembler />;
+ 
+  return <WomenPageAssembler  />;
 };
 
 export default WomenPage;

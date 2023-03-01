@@ -2,21 +2,24 @@ import React, { useState } from 'react';
 import classes from './SectionsLayout.module.css';
 import { Fragment } from 'react';
 
-// -16.666% moves one slide
-const oneSlideMaxAmount = 6;
-const oneSlideShift = 100 / oneSlideMaxAmount;
+import ProductsMap from '../ProductsMap';
 
-const SectionsLayout = (props) => {
+// Pass visibleItemsCount prop to signify maximum how many box should be displayed simultaniously.
+const SectionsLayout = ({ name, items, visibleItemsCount }) => {
   /* SLIDER LOGIC */
   const [sliderTilt, setSliderTilt] = useState(0);
-  const totalElementsCount = props.children.props.data.length;
+
+  const oneSlideMaxAmount = visibleItemsCount;
+  const oneSlideShift = 100 / oneSlideMaxAmount;
+
+  const totalElementsCount = items.length;
   const maxVisibleSlide = totalElementsCount - oneSlideMaxAmount;
 
   const sliderEffect = {
     transform: `translate3d(-${sliderTilt * oneSlideShift}%, 0px, 0px)`,
   };
+
   const prevSlideHandler = (e) => {
-    e.preventDefault();
     if (sliderTilt - oneSlideMaxAmount <= 0) {
       return setSliderTilt(0);
     }
@@ -24,9 +27,7 @@ const SectionsLayout = (props) => {
       return setSliderTilt(sliderTilt - oneSlideMaxAmount);
     }
   };
-
   const nextSlideHandler = (e) => {
-    e.preventDefault();
     if (sliderTilt + oneSlideMaxAmount > maxVisibleSlide) {
       return setSliderTilt(maxVisibleSlide);
     }
@@ -34,6 +35,7 @@ const SectionsLayout = (props) => {
       return setSliderTilt(sliderTilt + oneSlideMaxAmount);
     }
   };
+
   const prevButtonClasses = `${classes.previous} ${
     sliderTilt === 0 && classes.disabled
   }`;
@@ -42,7 +44,7 @@ const SectionsLayout = (props) => {
   }`;
 
   /* TITLE TRANSFORMATION*/
-  const sectionNameCapitalized = props.name
+  const sectionNameCapitalized = name
     .split(' ')
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(' ');
@@ -54,7 +56,7 @@ const SectionsLayout = (props) => {
       </div>
       <div className={classes.container}>
         <div className={classes.slider} style={sliderEffect}>
-          {props.children}
+          <ProductsMap data={items} />
         </div>
         {totalElementsCount > oneSlideMaxAmount && (
           <div className={prevButtonClasses} onClick={prevSlideHandler}>

@@ -1,0 +1,71 @@
+.formContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35rem;
+  height: 4.5rem;
+}
+
+.input,
+.searchButton {
+  border: solid 1px;
+  border-color: var(--color-border--1);
+  background-color: inherit;
+  height: inherit;
+}
+
+.input {
+  width: inherit;
+  padding-left: 1rem;
+  border-right: 0px;
+  outline: none;
+}
+
+.searchButton {
+  width: 4.5rem;
+  margin-left: -1px;
+  border-left: 0px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchBox {
+  color: var(--color-black-1);
+  padding: inherit;
+  padding: 0 1rem;
+  position: absolute;
+  bottom: -13.7rem;
+  width: 35rem;
+  height: 20rem;
+  max-height: 30vh;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border: solid 1px var(--color-border--1);
+  z-index: 100;
+}
+
+.searchBox > div {
+  padding: 0.3rem;
+  width: 100%;
+  z-index: inherit;
+}
+
+/* SVG STYLES*/
+.svgIcon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.svgIcon path,
+.svgIcon polygon,
+.svgIcon rect {
+  fill: #000000;
+}
+
+.svgIcon circle {
+  stroke: #000000;
+  stroke-width: 1;
+}
