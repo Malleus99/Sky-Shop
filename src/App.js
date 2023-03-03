@@ -13,11 +13,17 @@ import WomenPage from './pages/WomenPage';
 import KidsPage from './pages/KidsPage';
 import DiscountPage from './pages/DiscountPage';
 import NewPage from './pages/NewPage';
+import AuthorizationPage from 'pages/AuthorizationPage';
+import FavoritePage from 'pages/FavoritePage';
+import CartPage from 'pages/CartPage';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<MainNavigation />} errorElement={<ErrorPage />}>
       <Route index element={<MainPage />} />
+      <Route path='/auth' element={<AuthorizationPage />} />
+      <Route path='/favorites' element={<FavoritePage />} />
+      <Route path='/cart' element={<CartPage />} />
       <Route path='/new' element={<NewPage />} />
       <Route path='/women' element={<WomenPage />} />
       <Route path='/men' element={<MenPage />} />

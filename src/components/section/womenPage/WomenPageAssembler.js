@@ -1,19 +1,19 @@
 import { useSelector, useDispatch } from 'react-redux';
+import { useEffect } from 'react';
 
 import FilterLayout from '../generalUtilities/filter/FilterLayout';
 import FilterName from '../generalUtilities/filter/FilterName';
 import Section from '../Section';
 import ContentWrapper from '../generalUtilities/content/ContentWrapper';
 import ProductsMap from '../../main-page/ProductsMap';
-import { filterItems } from '../../../store/items-slice';
-import { useEffect } from 'react';
+import { filterItems } from 'store/items-slice';
 
 const WomenPageAssembler = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(filterItems({ sex: 'f' }));
-  }, [dispatch]);
+  }, []);
 
   const products = useSelector((state) => state.items.sectionData);
 

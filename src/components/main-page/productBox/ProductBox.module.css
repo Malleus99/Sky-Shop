@@ -26,6 +26,25 @@
   left: 0px;
 }
 
+.interactiveButtons {
+  z-index: 10;
+  position: absolute;
+  top: 3rem;
+  right: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  opacity: 0; /* change to 0*/
+  transform: translate(1rem, 0rem);
+  transition: all 0.2s ease-out;
+}
+.product:hover .interactiveButtons {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+.interactiveButtons > * {
+  margin-bottom: 0.2rem;
+}
+
 .info {
   padding: 0.7rem;
   width: 100%;

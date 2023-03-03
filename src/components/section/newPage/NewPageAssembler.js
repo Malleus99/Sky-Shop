@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import ProductsMap from '../../main-page/ProductsMap';
@@ -8,6 +8,7 @@ import NewPageFilter from './NewPageFilters';
 
 const NewPageAssembler = () => {
   const products = useSelector((state) => state.items.data);
+
   const [initState, SetInitData] = useState([]);
   const [visibleData, setVisibleData] = useState([]);
 
@@ -16,9 +17,9 @@ const NewPageAssembler = () => {
     SetInitData(products);
   }, [products]);
 
-  const updateState = (data) => {
+  const updateState = useCallback((data) => {
     setVisibleData(data);
-  };
+  }, []);
 
   return (
     <Section>

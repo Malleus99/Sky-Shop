@@ -8,7 +8,9 @@ const SearchForm = () => {
   const products = useSelector((state) => state.items.data).filter((product) =>
     product.productName.includes(`${inputValue}`)
   );
-  const items = products.map((item) => <div>{item.productName}</div>);
+  const items = products.map((item) => (
+    <div>{item.productName.toUpperCase()}</div>
+  ));
 
   const inputChangeHandler = (event) => {
     setInputValue(event.target.value);

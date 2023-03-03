@@ -1,0 +1,33 @@
+.cartContainer {
+  background: linear-gradient(
+    135deg,
+    rgba(70, 145, 246, 1) 10%,
+    rgb(21, 21, 184, 1) 100%
+  );
+  color: rgb(226, 224, 224);
+  width: 40rem;
+  margin: 0 auto;
+  cursor: default;
+}
+
+.totalPrice {
+  color: white;
+}
+
+.order {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.orderBtn {
+  border: 1px solid;
+  border-radius: 5rem;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.orderBtn:hover {
+  background-color: rgba(43, 0, 197, 0.986);
+}

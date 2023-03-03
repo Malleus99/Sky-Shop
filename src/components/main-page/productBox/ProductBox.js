@@ -4,6 +4,8 @@ import ProductPrice from './ProductPrice';
 import ProductSizes from './ProductSizes';
 import TagDiscount from './TagDiscount';
 import TagNew from './TagNew';
+import InteractiveFavorite from './InteractiveFavorite';
+import InteractiveCart from './InteractiveCart';
 
 const ProductBox = ({
   id,
@@ -27,6 +29,15 @@ const ProductBox = ({
       <div className={classes.tags}>
         <TagDiscount price={price} discount={discount} />
         <TagNew tags={tags} />
+      </div>
+      <div className={classes.interactiveButtons}>
+        <InteractiveFavorite itemId={id} />
+        <InteractiveCart
+          id={id}
+          title={productName}
+          price={price}
+          discount={discount}
+        />
       </div>
       <div className={classes.imgContainer}>
         <ProductsImgs imgs={previewPics} />

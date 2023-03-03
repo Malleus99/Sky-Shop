@@ -7,9 +7,9 @@ const NewPageFilter = ({ data, updateState }) => {
     <FilterLayout>
       <CategoriesFilter
         title='categories'
+        isOpen={true}
         data={data}
         updateState={updateState}
-        isOpen={true}
       />
       <FilterName title='sub-category' isOpen={false}></FilterName>
     </FilterLayout>

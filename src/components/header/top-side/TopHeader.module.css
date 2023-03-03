@@ -14,8 +14,56 @@
   height: 80%;
   width: 20rem;
 }
+.interactiveContainer {
+  display: flex;
+  align-items: center;
+}
 
-.svgs svg {
+.interactiveContainer > * {
   margin-left: 1rem;
   margin-right: 1rem;
+}
+.interactiveBtns {
+  width: 3rem;
+  height: 3rem;
+  position: relative;
+  cursor: pointer;
+}
+.favoritesCount,
+.cartCount {
+  min-width: 1.7rem;
+  height: 1.7rem;
+  font-size: 1.4rem;
+  border-radius: 50%;
+  text-align: center;
+  color: white;
+  position: absolute;
+  top: 0px;
+  right: -0.5rem;
+  user-select: none;
+}
+.favoritesCount {
+  background-color: rgba(255, 0, 0, 0.705);
+}
+.cartCount {
+  background-color: var(--color-blue--1);
+}
+.svgs {
+  width: 3rem;
+  height: 3rem;
+}
+.svgs path,
+.svgs polygon,
+.svgs rect {
+  fill: #4691f6;
+}
+
+.svgs circle {
+  stroke: #4691f6;
+  stroke-width: 1;
+}
+
+.logOut {
+  color: black;
+  cursor: pointer;
 }

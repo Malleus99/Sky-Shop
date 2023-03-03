@@ -1,0 +1,41 @@
+.favContainer {
+  background-color: rgb(248, 248, 248);
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.addFavorite {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.addFavorite path,
+.addFavorite polygon,
+.addFavorite rect {
+  fill: #f6468f;
+}
+
+.addFavorite circle {
+  stroke: #f6468f;
+  stroke-width: 1;
+}
+
+.removeFavorite {
+  width: 2.2rem;
+  height: 2.2rem;
+}
+
+.removeFavorite path,
+.removeFavorite polygon,
+.removeFavorite rect {
+  fill: #f6468f;
+}
+
+.removeFavorite circle {
+  stroke: #f6468f;
+  stroke-width: 1;
+}
